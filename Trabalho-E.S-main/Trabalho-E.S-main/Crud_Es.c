@@ -33,6 +33,28 @@ void imprime(NOH* lista){
             lista=lista->prox;
     }
 }
+int remover_inicio(NOH**lsta){
+    if(*lista==NULL){
+        printf("lista vazia. Nao ha elemento para remover\n");
+        return -1;
+    }
+    NOH*tmp=*lista;
+    *lista=(*lista)->prox;
+    free(tmp->nome);
+    free(tmp);
+    return 1;
+}
+int remover_inicio(NOH** lista) {
+    if (*lista == NULL) {
+        printf("Lista vazia. Não há elemento para remover.\n");
+        return -1;
+    }
+    NOH* tmp = *lista;
+    *lista = (*lista)->prox;
+    free(tmp->nome);
+    free(tmp);
+    return 1;
+}
 int remove_valor(NOH** lista, const char* buscado) {
     if (*lista == NULL) {
         printf("Lista vazia\n");
